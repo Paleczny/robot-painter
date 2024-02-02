@@ -1,0 +1,9 @@
+@import "/src/scss/Robot-painter-root.scss";
+
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
+  background-color: $robot-blue-400;
+}

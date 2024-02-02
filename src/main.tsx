@@ -1,12 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import App from './App.tsx'
+import Home from './pages/Home/Home.tsx'
 import './index.css'
+import Layout from "./components/Layout/Layout.tsx";
 
 const routes = createBrowserRouter([{
     path: "/",
-    element: <App />,
+    element: <Layout />,
+    children: [{
+        path: "/",
+        element: <Home />
+    }]
 }])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
