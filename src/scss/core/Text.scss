@@ -1,0 +1,19 @@
+@import "Variables";
+
+.robot-text{
+  font-family: 'Roboto', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.robot-text-medium {
+  @extend .robot-text;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.robot-text-small {
+  @extend .robot-text;
+  font-size: 20px;
+  line-height: 33px;
+}
