@@ -4,8 +4,8 @@ interface GridProps{
     grid: [][],
     robotPosition: {x: number,y: number}
 }
-const Grid = ({grid, robotPosition}:GridProps) => {
 
+const Grid = ({grid, robotPosition}:GridProps) => {
     return (
         <div className="grid">
             {grid.map((row: [], rowIndex: number ) => (
@@ -17,7 +17,7 @@ const Grid = ({grid, robotPosition}:GridProps) => {
                             key={colIndex}
                             className={`cell ${col ? 'painted' : ''}`}
                         >
-                            { showRobotInCell && <img className='robot-img' src={Vacuum}/>}
+                            { showRobotInCell && <img alt="" className='robot-img' src={Vacuum}/>}
                         </div>
                     )})}
                 </div>
