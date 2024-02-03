@@ -1,20 +1,25 @@
-import './Grid.css'; // Create a CSS file for grid styling
-
+import './Grid.scss';
+import Vacuum from "/vacuum.svg"
 interface GridProps{
-    grid: [][]
+    grid: [][],
+    robotPosition: {x: number,y: number}
 }
-const Grid = ({grid}:GridProps) => {
+const Grid = ({grid, robotPosition}:GridProps) => {
 
     return (
         <div className="grid">
             {grid.map((row: [], rowIndex: number ) => (
                 <div key={rowIndex} className="row">
-                    {row.map((col, colIndex: number) => (
+                    {row.map((col, colIndex: number) => {
+                        const showRobotInCell = rowIndex === robotPosition.y && colIndex === robotPosition.x;
+                        return (
                         <div
                             key={colIndex}
                             className={`cell ${col ? 'painted' : ''}`}
-                        ></div>
-                    ))}
+                        >
+                            { showRobotInCell && <img className='robot-img' src={Vacuum}/>}
+                        </div>
+                    )})}
                 </div>
             ))}
         </div>
