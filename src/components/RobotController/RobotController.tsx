@@ -8,7 +8,7 @@ interface RobotControllerProps {
     onMove: (direction: string) => void;
 }
 
-const RobotController = ({onMove}: RobotControllerProps) => {
+function RobotController({onMove}: RobotControllerProps) {
 
     useEffect(() => {
         function downHandler(key: KeyboardEvent) {

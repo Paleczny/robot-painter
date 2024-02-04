@@ -4,14 +4,24 @@
  * This component represents the header of the application.
  * Currently, it's a simple header element with no additional content.
  */
-import React from 'react';
+import {NavLink} from "react-router-dom";
 
-import './Header.scss';
+import Vacuum from "/vacuum.svg"
 
-const Header: React.FC = () => {
+import "./Header.scss";
+
+function Header() {
 
     return (
-        <header />
+        <header className="header-container">
+            <NavLink className="header-navigation" to="/">
+                <img src={Vacuum} alt=''/>
+                <span>Robot Painter</span>
+            </NavLink>
+            <nav>
+                <NavLink className="page-navigation" to="/about">About</NavLink>
+            </nav>
+        </header>
     )
 }
 

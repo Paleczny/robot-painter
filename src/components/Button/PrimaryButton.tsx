@@ -7,8 +7,10 @@ interface ButtonProps {
     [x: string]: any,
 }
 
-export default function PrimaryButton(props: PropsWithChildren<ButtonProps>) {
+function PrimaryButton(props: PropsWithChildren<ButtonProps>) {
     return (
         <button className="primary-button" {...props} onClick={props.onClick}>{props.children}</button>
     )
 }
+
+export default PrimaryButton;
