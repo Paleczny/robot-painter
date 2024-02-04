@@ -4,6 +4,7 @@ const createGrid = (gridSize: number) => Array(gridSize).fill(Array(gridSize).fi
 
 export default function useRobotPainter(gridSize = 10) {
     const [robotPosition, setRobotPosition] = useState({x: 0, y: 0});
+    const [robotDirection, setRobotDirection] = useState('up');
     const [grid, setGrid] = useState(createGrid(gridSize));
     const [spacesPainted, setSpacesPainted] = useState<string[]>([]);
 
@@ -43,6 +44,7 @@ export default function useRobotPainter(gridSize = 10) {
 
             paintCell(x, y)
             setSpacesPainted((prev) => [...prev, `${x},${y}`]);
+            setRobotDirection(direction);
 
             return {x, y}
         })
@@ -52,6 +54,7 @@ export default function useRobotPainter(gridSize = 10) {
 
     return {
         robotPosition,
+        robotDirection,
         spacesPainted,
         grid,
         moveRobot
