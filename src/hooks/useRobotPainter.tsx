@@ -34,16 +34,16 @@ export default function useRobotPainter(gridSize = 10) {
             let {x, y} = prevPosition;
             switch (direction) {
                 case 'up':
-                    x = robotPosition.x > 0 ? robotPosition.x - 1 : robotPosition.x;
+                    x = prevPosition.x > 0 ? prevPosition.x - 1 : prevPosition.x;
                     break;
                 case 'down':
-                    x = robotPosition.x < grid.length - 1 ? robotPosition.x + 1 : robotPosition.x;
+                    x = prevPosition.x < grid.length - 1 ? prevPosition.x + 1 : prevPosition.x;
                     break;
                 case 'left':
-                    y = robotPosition.y > 0 ? robotPosition.y - 1 : robotPosition.y;
+                    y = prevPosition.y > 0 ? prevPosition.y - 1 : prevPosition.y;
                     break;
                 case 'right':
-                    y = robotPosition.y < grid.length -1 ? robotPosition.y + 1 : robotPosition.y;
+                    y = prevPosition.y < grid.length -1 ? prevPosition.y + 1 : prevPosition.y;
                     break;
 
                 default:

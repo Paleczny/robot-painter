@@ -1,16 +1,18 @@
-import "./Home.scss"
+import {useState} from "react";
+
 import Grid from "../../components/Grid/Grid.tsx";
+import PrimaryButton from "../../components/Button/PrimaryButton.tsx";
 import RobotController from "../../components/RobotController/RobotController.tsx";
 import useRobotPainter from "../../hooks/useRobotPainter.tsx";
-import {useState} from "react";
+
+import "./Home.scss"
 
 function Home() {
     const [gridSize, setGridSize] = useState(10)
     let {robotPosition, grid, spacesPainted, moveRobot, robotDirection} = useRobotPainter(gridSize);
 
     return (
-        <div className="home-container" tabIndex={0}
-             onKeyDown={(e) => moveRobot(e.key.replace("Arrow", '').toLowerCase())}>
+        <div className="home-container">
             <div className="title-container">
                 <div className="inner-title-container">
                     <span className="robot-text-medium">Position</span>
@@ -21,23 +23,21 @@ function Home() {
                         Grid Size
                     </label>
                     <div className="grid-buttons-container">
-                        <button className="grid-size-button"
-                                onClick={() => setGridSize(prev => prev - 1)}
-                                disabled={gridSize <= 2}>
+                        <PrimaryButton onClick={() => setGridSize(prev => prev - 1)}
+                                       disabled={gridSize <= 2}>
                             -
-                        </button>
-
+                        </PrimaryButton>
                         <input type="text"
                                min={2}
                                max={100}
                                disabled={true}
                                value={gridSize}
                                onChange={(e) => setGridSize(Number(e.target.value))}/>
-                        <button className="grid-size-button"
-                                onClick={() => setGridSize(prev => prev + 1)}
-                                disabled={gridSize >= 100}>
+                        <PrimaryButton
+                            onClick={() => setGridSize(prev => prev + 1)}
+                            disabled={gridSize >= 100}>
                             +
-                        </button>
+                        </PrimaryButton>
                     </div>
                 </div>
                 <div className="inner-title-container">

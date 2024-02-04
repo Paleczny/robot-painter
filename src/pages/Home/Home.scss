@@ -34,30 +34,3 @@ input {
   font-size: 16px;
   border: none;
 }
-
-.grid-size-button {
-  border-radius: 6px;
-  border: none;
-  color: white;
-  background-color: $robot-blue-200;
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-
-  &:hover{
-    background-color: $robot-blue-400;
-    color: $robot-black-100;
-  }
-
-  &:active {
-    background-color: $robot-blue-100;
-  }
-
-  &:disabled {
-    cursor: unset;
-    background-color: $robot-black-500;
-  }
-}

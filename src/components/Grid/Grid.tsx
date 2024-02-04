@@ -1,4 +1,5 @@
 import './Grid.scss';
+
 import Vacuum from "/vacuum.svg"
 interface GridProps{
     grid: [][],
