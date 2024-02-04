@@ -4,11 +4,12 @@ import RobotController from "../../components/RobotController/RobotController.ts
 import useRobotPainter from "../../hooks/useRobotPainter.tsx";
 
 function Home() {
-    const { robotPosition,grid,spacesPainted,  moveRobot} = useRobotPainter(10);
+    const {robotPosition, grid, spacesPainted, moveRobot, robotDirection} = useRobotPainter(10);
 
     return (
-        <div className="home-container" tabIndex={0} onKeyDown={(e) => moveRobot(e.key.replace("Arrow",'').toLowerCase())}>
-            <Grid grid={grid} robotPosition={robotPosition}/>
+        <div className="home-container" tabIndex={0}
+             onKeyDown={(e) => moveRobot(e.key.replace("Arrow", '').toLowerCase())}>
+            <Grid grid={grid} robotPosition={robotPosition} robotDirection={robotDirection}/>
             <RobotController onMove={moveRobot}/>
             <div>Position: ({robotPosition.x}, {robotPosition.y})</div>
             <div>Spaces Painted: {new Set(spacesPainted).size}</div>
