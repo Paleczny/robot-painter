@@ -1,3 +1,7 @@
+import {useEffect} from "react";
+
+import PrimaryButton from "../Button/PrimaryButton.tsx";
+
 import "./RobotController.scss"
 
 interface RobotControllerProps {
@@ -6,14 +10,28 @@ interface RobotControllerProps {
 
 const RobotController = ({onMove}: RobotControllerProps) => {
 
+    useEffect(() => {
+        function downHandler(key: KeyboardEvent) {
+            if (key.key.includes('Arrow')) {
+                onMove(key.key.toString().replace("Arrow", '').toLowerCase())
+            }
+        }
+
+        window.addEventListener("keydown", downHandler);
+
+        return () => {
+            window.removeEventListener("keydown", downHandler);
+        };
+    }, [onMove]);
+
     return (
         <div className="controller-container">
-            <button onClick={() => onMove('up')}>Up</button>
+            <PrimaryButton onClick={() => onMove('up')}>↑</PrimaryButton>
             <div>
-                <button onClick={() => onMove('left')}>Left</button>
-                <button onClick={() => onMove('right')}>Right</button>
+                <PrimaryButton onClick={() => onMove('left')}>←</PrimaryButton>
+                <PrimaryButton onClick={() => onMove('right')}>→</PrimaryButton>
             </div>
-            <button onClick={() => onMove('down')}>Down</button>
+            <PrimaryButton onClick={() => onMove('down')}>↓</PrimaryButton>
         </div>
     );
 };
