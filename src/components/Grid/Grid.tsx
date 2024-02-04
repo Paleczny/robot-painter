@@ -8,9 +8,10 @@ interface GridProps{
 
 const Grid = ({grid, robotPosition, robotDirection}:GridProps) => {
     return (
-        <div className="grid">
+        <div className="grid"
+             style={{gridTemplateColumns: `repeat(${grid.length},1fr)`, gridTemplateRows: `repeat(${grid.length},70px)`}}>
             {grid.map((row: [], rowIndex: number ) => (
-                <div key={rowIndex} className="row">
+                <div key={rowIndex}>
                     {row.map((col, colIndex: number) => {
                         const showRobotInCell = rowIndex === robotPosition.y && colIndex === robotPosition.x;
                         let imgRotation;

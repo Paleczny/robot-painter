@@ -3,12 +3,6 @@
 .grid {
     display: grid;
     border: 1px solid black;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(10, 70px);
-}
-
-.row {
-
 }
 
 .robot-img {
