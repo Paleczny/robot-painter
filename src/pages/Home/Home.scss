@@ -1,0 +1,63 @@
+@import "/src/scss/Robot-painter-root.scss";
+
+.home-container {
+  outline: none;
+}
+
+.title-container {
+  display: flex;
+  margin: 15px;
+  justify-content: space-evenly;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
+.inner-title-container {
+  text-align-last: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-buttons-container {
+  text-align-last: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input {
+  @extend .robot-text-medium;
+  width: 50px;
+  font-size: 16px;
+  border: none;
+}
+
+.grid-size-button {
+  border-radius: 6px;
+  border: none;
+  color: white;
+  background-color: $robot-blue-200;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $robot-blue-400;
+    color: $robot-black-100;
+  }
+
+  &:active {
+    background-color: $robot-blue-100;
+  }
+
+  &:disabled {
+    cursor: unset;
+    background-color: $robot-black-500;
+  }
+}
