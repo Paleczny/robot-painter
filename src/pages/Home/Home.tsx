@@ -16,7 +16,7 @@ function Home() {
             <div className="title-container">
                 <div className="inner-title-container">
                     <span className="robot-text-medium">Position</span>
-                    <span className="robot-text-small">({robotPosition.x}, {robotPosition.y})</span>
+                    <span className="robot-text-small">({robotPosition.y},{robotPosition.x})</span>
                 </div>
                 <div className="buttons-container">
                     <label className="robot-text-medium">

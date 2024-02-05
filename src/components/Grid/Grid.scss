@@ -1,24 +1,30 @@
 @import "/src/scss/Robot-painter-root.scss";
 
 .grid {
-    display: grid;
-    border: 1px solid black;
+  display: grid;
+  text-align: center;
 }
 
 .robot-img {
-    width: 75%;
-    height: 75%;
+  width: 75%;
+  height: 75%;
 }
 
 .cell {
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .painted {
-    background-color: $robot-blue-500;
+  background-color: $robot-blue-500;
+}
+
+.row-index-span {
+  position: absolute;
+  left: 0;
+  font-size: 14px;
 }
