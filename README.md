@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Optimum Energy UI Paint Bot Problem
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application allows a robot to move around a square grid and paint the spaces
+it passes over.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Use arrow keys or interactive controls to move robot.
+- Ability to change gird size.
+- Show current location of robot.
+- Show number of spaces painted.
+- Error handling when navigating to page that doesn't exist.
+- Included dummy page About.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installing
+
+A step-by-step guide on how to get a development environment running.
+
+1. Clone the repository:
+   ```git clone https://github.com/Paleczny/robot-painter.git```
+2. Install dependencies::
+   ```npm install```
+3. Run App:
+   ```npm run dev```
+
+### Built With
+- React - The web framework used
+- TypeScript - Language for application-scale JavaScript
+- React Router - Routing library for React
+
+### Authors
+- Brandon Paleczny
