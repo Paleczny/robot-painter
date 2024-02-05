@@ -5,10 +5,10 @@
   text-align: center;
 }
 
-.robot-img {
-  width: 75%;
-  height: 75%;
-}
+//.robot-img {
+//  width: 75%;
+//  height: 75%;
+//}
 
 .cell {
   width: 100%;
@@ -20,6 +20,7 @@
 }
 
 .painted {
+  transition: 1.2s all;
   background-color: $robot-blue-500;
 }
 
@@ -27,4 +28,9 @@
   position: absolute;
   left: 0;
   font-size: 14px;
+}
+
+.robot-img {
+  position: absolute;
+  transition: 0.3s all;
 }
