@@ -11,7 +11,7 @@ header {
 .header-container {
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+  padding: 25px 25px;
 }
 
 img {
@@ -25,7 +25,7 @@ span {
 
 .navigation {
   text-decoration: none;
-  color: $robot-black-100;
+  color: $robot-black-600;
   font-weight: 600;
   padding: 5px 20px;
 }
@@ -34,7 +34,6 @@ span {
   @extend .navigation;
 
   &:hover {
-    color: $robot-black-200;
     text-decoration: underline;
   }
 }
