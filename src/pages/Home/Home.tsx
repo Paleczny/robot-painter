@@ -9,7 +9,7 @@ import "./Home.scss"
 
 function Home() {
     const [gridSize, setGridSize] = useState(10)
-    let {robotPosition, grid, spacesPainted, moveRobot, robotDirection} = useRobotPainter(gridSize);
+    const {robotPosition, grid, spacesPainted, moveRobot, robotDirection} = useRobotPainter(gridSize);
 
     return (
         <div className="home-container">
