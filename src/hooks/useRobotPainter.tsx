@@ -1,8 +1,10 @@
 import {useCallback, useEffect, useState} from "react";
 
+import {GameStarted} from "../types/GameStarted.enum.ts";
+
 const createGrid = (gridSize: number) => Array(gridSize).fill(Array(gridSize).fill(false));
 
-export default function useRobotPainter(gridSize = 10) {
+export default function useRobotPainter(gridSize = 10, gameStarted = GameStarted.stop) {
     const [robotPosition, setRobotPosition] = useState({x: 0, y: 0});
     const [robotDirection, setRobotDirection] = useState('up');
     const [grid, setGrid] = useState(createGrid(gridSize));
@@ -15,6 +17,16 @@ export default function useRobotPainter(gridSize = 10) {
         setGrid(createGrid(gridSize))
         moveRobot('');
     },[gridSize])
+
+    useEffect(() => {
+        if(gameStarted === GameStarted.reset){
+            setSpacesPainted([])
+            setRobotPosition({x:0,y:0})
+            setRobotDirection('up')
+            setGrid(createGrid(gridSize))
+            moveRobot('');
+        }
+    }, [gameStarted]);
 
     useEffect(() => {
         moveRobot('');

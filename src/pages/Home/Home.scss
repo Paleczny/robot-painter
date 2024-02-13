@@ -35,3 +35,9 @@ input {
   font-size: 16px;
   border: none;
 }
+
+.time-and-highscore-container{
+  display: flex;
+  text-align: end;
+  flex-direction: column;
+}
